@@ -1,0 +1,25 @@
+{
+  "name": "seao",
+  "version": "1.0.0",
+  "description": "koaserver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js -harmony"
+  },
+  "author": "AyleinOter",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.0.1",
+    "koa-router": "^7.0.1",
+    "mock": "^0.1.1",
+    "node-uuid": "^1.4.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-register": "^6.23.0"
+  }
+}
