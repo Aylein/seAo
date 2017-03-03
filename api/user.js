@@ -2,12 +2,12 @@ const router = new (require("koa-router"))({prefix: "/api/user"});
 const User = require("../lib/user.js");
 
 router.get("/", async ctx => {
-    await User.getUserList().then(res => {
+    await User.getUserList(ctx.query).then(res => {
         ctx.body = JSON.stringify(res);
     });
 });
 router.post("/", async ctx => {
-    await User.addUser([{name: "a"}, {name: "b"}, {name: "c"}]).then(res => {
+    await User.addUser(ctx.request.body).then(res => {
         ctx.body = JSON.stringify(res);
     });
 });
