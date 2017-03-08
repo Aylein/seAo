@@ -28,6 +28,16 @@ Client.find = name => (rule = {}) => new Promise(resolve => {
         });
     });
 });
+Client.count = name => (rule = {}) => new Promise(resolve => {
+    rule = Client.makeParam(rule);
+    let collect = Client.collect(name);
+    collect().then(({col, db}) => {
+        col.find(rule.rule).count((err, res) => {
+            rule.page.count = res;
+            resolve(res); 
+        });
+    });
+});
 Client.insert = name => (arr) => new Promise(resolve => {
     if(!arr) resolve({res: false, msg: "插入对象为空"});
     let fn = Array.isArray(arr) ? "insertMany" : "insertOne";
