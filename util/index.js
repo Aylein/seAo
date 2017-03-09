@@ -1,3 +1,4 @@
-const mongo = require("./mongo.js");
+const DB = require("./mongo.js");
+const Page = require("./page.js");
 
-module.exports = {db: mongo};
+module.exports = {DB, Page};
