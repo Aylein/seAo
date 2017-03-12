@@ -89,7 +89,7 @@ class Client{
                 col.update(rule, obj).then(res => {
                     db.close();
                     resolve(res);
-                })
+                });
             });
         });
     }
@@ -99,7 +99,7 @@ class Client{
                 col.remove(rule).then(res => {
                     db.close();
                     resolve(res);
-                })
+                });
             });
         });
     }
