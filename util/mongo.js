@@ -18,7 +18,7 @@ const Collect = (model) => () => new Promise(resolve => {
 const initParam = param => {
     let page = Object.assign({page: 1, row: 10}, param);
     let sort = {createTime: 1};
-    sort[param.sort] = parseInt(param.sortType);
+    if(param.sort) sort[param.sort] = param.sortType && (param.sortType == "desc" || parseInt(param.sortType)) == 1 ? 1 : -1;
     page.page = parseInt(page.page);
     page.row = parseInt(page.row);
     delete param.page;
