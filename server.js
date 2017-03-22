@@ -1,3 +1,5 @@
+require('babel-register');
+require('babel-polyfill');
 const koa = require("koa");
 const bodyParser = require('koa-bodyparser');
 const route = require("./route");
