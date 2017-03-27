@@ -3,11 +3,13 @@ const path = require("path");
 const html = require("html-webpack-plugin");
 
 module.exports = {
+    devtool: "#map-srouce",
     entry: {
         react: ["react", "react-dom", "react-router"],
         main: path.resolve(__dirname, "../src/index.js")
     },
     output: {
+        publicPath: "/",
         path: path.resolve(__dirname, "../src"),
         filename: "[name].bundle.js"
     },
