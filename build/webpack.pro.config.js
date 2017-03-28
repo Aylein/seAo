@@ -11,7 +11,7 @@ module.exports = {
     output: {
         publicPath: "/",
         path: path.resolve(__dirname, "../dist"),
-        filename: "js/[name].js",
+        filename: "js/[hash:8].[name].min.js",
         chunkFilename: "js/[chunkhash:8].[name].chunk.min.js"
     },
     module: {
@@ -38,7 +38,7 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new html({template: path.resolve(__dirname, "../src/default.html")}),
-        new webpack.optimize.CommonsChunkPlugin({name: ["main"], minChunks: Infinity}),
+        //new webpack.optimize.CommonsChunkPlugin({name: ["main"], filename: "js/common.min.js", minChunks: Infinity}),
         new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}})
     ]
 };
